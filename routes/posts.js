@@ -9,9 +9,6 @@ MongoClient.connect('mongodb://54.201.36.154/reddit', function(err, db) {
         if(err) {
                 console.log("There was a problem with the database");
         }
-
-    });
-
 });
 
 
