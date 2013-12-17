@@ -2,8 +2,8 @@ var MongoClient = require('mongodb').MongoClient;
 var request = require('request'); 
 var cronJob = require('cron').CronJob;
 
-var job = new cronJob('*/24 * * * * *', function() {
-	MongoClient.connect('mongodb://localhost:27017/reddit', function(err, db){
+//var job = new cronJob('*/24 * * * * *', function() {
+	MongoClient.connect('mongodb://172.31.39.118:27017/reddit', function(err, db){
 		if (err) throw err; 
 		console.log("cron job worked!"); 
 		request('http://www.reddit.com/r/nba/.json', function (error, response, body) {
@@ -53,4 +53,4 @@ var job = new cronJob('*/24 * * * * *', function() {
 
 	});
 
-}, null, true, "America/Los_Angeles"); 
+//}, null, true, "America/Los_Angeles"); 

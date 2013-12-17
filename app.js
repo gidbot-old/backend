@@ -6,7 +6,7 @@ var app = express();
 
 app.use(express.bodyParser());
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 8080);
 
 app.get('/posts', posts.findAll);
 app.get('/posts/:position', posts.findOne);

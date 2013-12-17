@@ -5,7 +5,7 @@ var mongo = require('mongodb');
 var BSON = mongo.BSONPure;
 
 
-var mongoClient = new MongoClient(new Server('localhost', 27017));
+var mongoClient = new MongoClient(new Server('50.201.36.154', 27017));
 mongoClient.open(function(err, mongoClient) {
         db = mongoClient.db("reddit");
         db.collection('nba', {strict:true}, function(err, collection){
