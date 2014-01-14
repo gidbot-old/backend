@@ -35,7 +35,7 @@ var cronJob = require('cron').CronJob;
 
 							db.collection('nba').update(query2, operator2, options2, function (err, data) {
 									if(err) throw err; 
-									console.dir(data); 
+									console.log(data); 
 						
 
 							});
