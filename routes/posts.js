@@ -5,7 +5,7 @@ var mongo = require('mongodb');
 var BSON = mongo.BSONPure;
 
 //mongodb://54.201.36.154/reddit
-MongoClient.connect('mongodb://54.201.114.29/reddit, function(err, db) {
+MongoClient.connect('mongodb://54.201.114.29:27017/reddit, function(err, db) {
 		myDb = db;
         if(err) {
                 console.log("There was a problem with the database");
