@@ -13,7 +13,7 @@ var cronJob = require('cron').CronJob;
 						var stories = obj.data.children.map(function (story) { return story.data}); 
 						for (var i =0; i < stories.length; i++) {
 								
-							//console.dir("test");				
+							console.dir("test");				
 							var id = stories[i].name;
 							stories[i]._id = id;
 							stories[i].position = i;
