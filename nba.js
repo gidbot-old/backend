@@ -2,8 +2,9 @@ var MongoClient = require('mongodb').MongoClient;
 var request = require('request'); 
 var cronJob = require('cron').CronJob;
 
-//var job = new cronJob('*/24 * * * * *', function() {
-	MongoClient.connect('mongodb://54.201.114.29:27017/reddit', function(err, db){
+//Hold: 54.201.114.29:27017
+var job = new cronJob('*/24 * * * * *', function() {
+	MongoClient.connect('mongodb://localhost/reddit', function(err, db){
 		if (err) throw err; 
 		console.log("cron job worked!"); 
 		request('http://www.reddit.com/r/nba/.json', function (error, response, body) {
@@ -13,7 +14,7 @@ var cronJob = require('cron').CronJob;
 						var stories = obj.data.children.map(function (story) { return story.data}); 
 						for (var i =0; i < stories.length; i++) {
 								
-							console.dir("test");				
+							//console.dir("test");				
 							var id = stories[i].name;
 							stories[i]._id = id;
 							stories[i].position = i;
@@ -52,5 +53,4 @@ var cronJob = require('cron').CronJob;
 	
 
 	});
-
-//}, null, true, "America/Los_Angeles"); 
+}, null, true, "America/Los_Angeles"); 
