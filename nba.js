@@ -46,7 +46,7 @@ var cronJob = require('cron').CronJob;
 		
 					else console.log(error); 
 			
-					db.close();
+					//db.close();
 	
 		});
 	
